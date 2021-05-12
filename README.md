@@ -18,3 +18,4 @@
 12. 1260: DFS & BFS 1.1
 22. 1012, 1697, 1707, 2178, 2206, 2606, 2667, 7562, 7569, 7576: DFS&BFS 1.2
 23. 1504, 1753, 9370: Shortest Path 1.1(Dijkstra)
+24. 1956, 10217, 11404, 11657: Shortest path 1.2(Bellman ford, Floyd, else)
