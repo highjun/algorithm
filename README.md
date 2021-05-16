@@ -20,3 +20,7 @@
 23. 1504, 1753, 9370: Shortest Path 1.1(Dijkstra)
 24. 1956, 10217, 11404, 11657: Shortest path 1.2(Bellman ford, Floyd, else)
 25. 1450, 1644, 1806, 2470, 3273: Two Pointer 1.1
+26.
+27.
+28. DP3, Dijkstra + 백트래킹
+29. 9019, 11780: DP3, 그래프
