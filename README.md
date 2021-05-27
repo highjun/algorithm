@@ -30,3 +30,4 @@
 ### 정리할 것
 1. BST(Binary Search Tree) - sort만 되어 있으면 logN이 유지되는데, 필요한 이유는?
 2. 전위 순회, 중위 순회, 후위 순회 - pre , in, post
+3. Cpp의 String은 어떻게 작동할까?
