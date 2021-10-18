@@ -1,4 +1,5 @@
 #include<iostream>
+
 #include<cstring>
 #include<cassert>
 #include<algorithm>
@@ -8,8 +9,34 @@ using namespace std;
 // pivot(배열의 첫번째 수)와의 비교를 통해서
 // pivot 이하의 배열과 pivot 초과의 배열로 나누어서 분할-정복을 사용한다.
 // 평균적으로 O(nlogn)이나 최악의 경우 O(n^2)이다.
-// 공간 복잡도는 tmp array가 모든 단계에서 나타나므로 O(nlogn)이 된다.
+// Swap을 이용하면 O(n)의 Space Complexity를 가진다.
+void swap(int *a, int *b){
+    int tmp = *b;
+    *b = *a;
+    *a = tmp;  
+}
+
+// arr[start,end)의 정렬
 void quick_sort(int* arr, int start, int end){
+    if(end-start > 1){
+        int pivot = arr[start];
+        int st = start+1;
+        int ed = end-1;
+        while(st <= ed){
+            if(pivot < arr[st]){
+                swap(arr+st, arr+ ed);
+                ed--;
+            }else{
+                st++;
+            }
+        }
+        swap(arr+st-1, arr+ start);
+        quick_sort(arr, start, st-1);
+        quick_sort(arr, st, end);
+    }
+}
+// 배열을 통해서 구현한 경우.
+void quick_sort2(int* arr, int start, int end){
     if(start < end){
         int pivot = arr[start];
         // cout << pivot <<"\n";
@@ -28,8 +55,8 @@ void quick_sort(int* arr, int start, int end){
         memcpy(arr + start, tmp, st*sizeof(int));
         arr[start + st] = pivot;
         memcpy(arr + start + st + 1, tmp + st, (len-st)*sizeof(int));
-        quick_sort(arr, start, start + st);
-        quick_sort(arr, start + st + 1, end);
+        quick_sort2(arr, start, start + st);
+        quick_sort2(arr, start + st + 1, end);
     }
 }
 
